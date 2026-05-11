@@ -36,6 +36,51 @@ npm run dev
 http://127.0.0.1:5173
 ```
 
+## 部署为在线网页
+
+该项目是纯前端 Vite 应用，可直接部署到静态托管平台（Vercel / Netlify / Cloudflare Pages / GitHub Pages）。
+
+### 1) 先本地打包确认
+
+```bash
+npm install
+npm run build
+```
+
+打包产物在 `dist/` 目录。
+
+### 2) 一键部署（推荐：Vercel）
+
+```bash
+npm install -g vercel
+vercel
+```
+
+按提示完成登录与项目绑定后，Vercel 会返回线上访问链接（`https://xxx.vercel.app`）。
+
+后续更新代码后可再次执行：
+
+```bash
+vercel --prod
+```
+
+### 3) 备选部署（Netlify）
+
+```bash
+npm install -g netlify-cli
+netlify deploy
+```
+
+首次执行选择：
+- Publish directory: `dist`
+- Build command: `npm run build`
+
+上线发布：
+
+```bash
+netlify deploy --prod
+```
+
 ## MVP 功能
 
 - 创建和编辑项目基础信息
